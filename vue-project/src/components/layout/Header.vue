@@ -1,0 +1,35 @@
+<!-- eslint-disable vue/multi-word-component-names -->
+
+<template>
+    <el-menu
+      :default-active="activeIndex2"
+      class="el-menu-demo"
+      mode="horizontal"
+      background-color="#545c64"
+      text-color="#fff"
+      active-text-color="#ffd04b"
+      @select="handleSelect"
+    >
+    <el-sub-menu v-for="(item) in menuData" :key="item.id" :index="item.id">
+        <template #title>{{ item.title }}</template>
+        <template v-if="item.children">
+            <el-menu-item v-for="(item1) in item.children" :key="item1.id" :index="item1.id">{{ item1.title }}</el-menu-item>
+        </template>
+        <el-menu-item :index="item.id" v-else>{{ item.title }}</el-menu-item>
+    </el-sub-menu>
+    </el-menu>
+  </template>
+  
+  <script lang="ts" setup>
+  import { ref } from 'vue'
+  import { menuData } from './menu';
+//   const activeIndex = ref(menuData)
+  const activeIndex2 = ref('1')
+  const handleSelect = (key: string, keyPath: string[]) => {
+    console.log(key, keyPath)
+  }
+  </script>
+  
+
+<style scoped>
+</style>
