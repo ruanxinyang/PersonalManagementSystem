@@ -19,8 +19,14 @@
     </el-sub-menu>
     </el-menu>
     <div class="personage">
-      <el-icon><User /></el-icon>
-      张三<el-icon><SwitchButton /></el-icon>
+      <div class="leftMenu">
+      <el-icon><i-ep-user /></el-icon>
+
+      </div>
+      <span>张三</span>
+      <a>
+      <el-icon><i-ep-switchButton /></el-icon>
+      </a>
     </div>
   </div>
   </template>
@@ -58,6 +64,16 @@
   text-align: right;
   position: absolute;
   right: 0;
+  display: flex;
+  align-items: center;
+  .leftMenu{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+  a{
+    display: flex;
+  }
 }
 }
 
