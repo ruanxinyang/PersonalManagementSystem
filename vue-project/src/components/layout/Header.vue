@@ -1,12 +1,12 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 
 <template>
+  <div class="header">
+    <div class="logo">< img src="@/assets/imgs/logo.png"/></div>
     <el-menu
       :default-active="activeIndex2"
       class="el-menu-demo"
       mode="horizontal"
-      background-color="#545c64"
-      text-color="#fff"
       active-text-color="#ffd04b"
       @select="handleSelect"
     >
@@ -18,6 +18,10 @@
         <el-menu-item :index="item.id" v-else>{{ item.title }}</el-menu-item>
     </el-sub-menu>
     </el-menu>
+    <div class="personage">
+      张三
+    </div>
+  </div>
   </template>
   
   <script lang="ts" setup>
@@ -31,5 +35,25 @@
   </script>
   
 
-<style scoped>
+<style scoped scss>
+.header{
+  display: flex;
+  position: relative;
+  .logo{
+    max-width: 160px;
+    display: inline-block;
+    img{
+      max-width: 100%;
+    }
+}
+.personage{
+  line-height: var(--el-menu-item-height);
+  padding: 0 20px;
+  height: 100%;
+  text-align: right;
+  position: absolute;
+  right: 0;
+}
+}
+
 </style>
