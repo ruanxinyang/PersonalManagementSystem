@@ -2,7 +2,7 @@
 
 <template>
   <div class="header">
-    <div class="logo">< img src="@/assets/imgs/logo.png"/></div>
+    <div class="logo"><img src="@/assets/imgs/logo.png"/></div>
     <el-menu
       :default-active="activeIndex2"
       class="el-menu-demo"
@@ -19,7 +19,8 @@
     </el-sub-menu>
     </el-menu>
     <div class="personage">
-      张三
+      <el-icon><User /></el-icon>
+      张三<el-icon><SwitchButton /></el-icon>
     </div>
   </div>
   </template>
@@ -39,6 +40,10 @@
 .header{
   display: flex;
   position: relative;
+  .el-menu-demo{
+    width: 100%;
+    padding-right: 200px;
+  }
   .logo{
     max-width: 160px;
     display: inline-block;
